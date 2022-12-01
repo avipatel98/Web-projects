@@ -1,3 +1,5 @@
+from playwright.sync_api import Page, expect
+
 # Tests for your routes go here
 """
 With: POST Request '/albums' 
@@ -53,11 +55,16 @@ def test_post_create_new_artist_and_confirm_with_get_all(web_client, db_connecti
 # === Example Code Below ===
 
 """
-GET /emoji
+We can get an emoji from the /emoji page
 """
-def test_get_emoji(web_client):
-    response = web_client.get("/emoji")
-    assert response.status_code == 200
-    assert response.data.decode("utf-8") == ":)"
+def test_get_emoji(page, test_web_address): # Note new parameters
+    # We load a virtual browser and navigate to the /emoji page
+    page.goto(f"http://{test_web_address}/emoji")
+
+    # We look at the <strong> tag
+    strong_tag = page.locator("strong")
+
+    # We assert that it has the text ":)"
+    expect(strong_tag).to_have_text(":)")
 
 # === End Example Code ===
