@@ -1,0 +1,20 @@
+<!-- GET /artists -->
+<!DOCTYPE html>
+<html lang="en">
+  <head><title>Artists</title></head>
+  <body>
+    <h1>Artist library</h1>
+
+    {% for artist in artists %}
+      <div class="t_artist">
+        Artist: <a href='/artists/{{artist.id}}'>{{artist.name}}</a>
+        Genre: {{artist.genre}}
+      </div>
+    {% endfor %}
+      <div>
+        <a href="/artists/new">Add new artist</a>
+      </div>
+
+    <!-- ... -->
+  </body>
+</html>

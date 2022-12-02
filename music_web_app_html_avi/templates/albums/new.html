@@ -1,0 +1,25 @@
+<!-- GET /albums -->
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Create new album</title></head>
+    <body>
+        <h1>Create new album</h1>
+        <form action="/albums", method="post">
+            <p>
+                <label for="Title">Title</label><br>
+                <input type="text" name="title" id="Title">
+            </p>
+            <p>
+                <label for="release_year">Release year</label><br>
+                <input type="int" name="release_year" id="release_year">
+            </p>
+            <p>
+                <label for="artist_id">Artist id</label><br>
+                <input type="int" name="artist_id" id="artist_id">
+            </p>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+    </body>
+</html>
